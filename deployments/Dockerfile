@@ -11,14 +11,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libpng-dev \
     libvorbis-dev \
     libsdl2-dev \
+    libsdl2-2.0-0 \
     liblua5.2-dev \
     libglew-dev \
     sox \
     libcrypt-dev \
     libcurl4-openssl-dev \
     libssl-dev \
-    libjpeg-dev \
-    libopenal-dev \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
