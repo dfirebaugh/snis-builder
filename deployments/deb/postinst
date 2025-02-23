@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+
+INSTALL_USER=$(logname 2>/dev/null || echo $SUDO_USER || echo $USER)
+
+if [ -z "$INSTALL_USER" ] || [ "$INSTALL_USER" = "root" ]; then
+    echo "Error: Could not determine a non-root user to run the script."
+    exit 1
+fi
+
+chown -R root:root /usr/libexec/snis
+chmod -R 755 /usr/libexec/snis/bin
+
+cd /usr/libexec/snis/
+sudo -u "$INSTALL_USER" ./bin/update_assets_from_launcher.sh
+
+ln -sf /usr/libexec/snis/bin/snis_client /usr/bin/snis
+ln -sf /usr/libexec/snis/bin/snis_client /usr/bin/snis_client
+

@@ -1,0 +1,8 @@
+Package: snis
+Version: 1.0.0
+Section: games
+Priority: optional
+Architecture: amd64
+Maintainer: Dustin Firebaugh <dafirebaugh@gmail.com>
+Description: Multi-player spaceship bridge simulator game. Captain your starship through adventures with your friends. See https://smcameron.github.io/space-nerds-in-space
+Depends: libsdl2-dev, portaudio19-dev, libglew-dev
