@@ -12,6 +12,7 @@ it does the following:
 * runs make to output snis binaries and assets
 * copies binaries and assets out of docker image to host machine
 * tarballs up the binaries into a release.tar
+* builds deb file and copies to release dir
 
 > to run this you need [docker installed](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
 ```bash
@@ -65,4 +66,9 @@ launch the `snis_client`
 ```bash
 /opt/snis/bin/snis_client
 ```
+
+
+## Versions
+
+The version looks at the [https://github.com/smcameron/space-nerds-in-space](https://github.com/smcameron/space-nerds-in-space) repo at the latest tag and latest commit which translates to something like `1.0.0-abc123`.
 
