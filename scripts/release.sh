@@ -4,9 +4,12 @@
 
 set -e
 
+VERSION=1.0.0-latest
+source ./scripts/get_version.sh
+
 OUTPUT_DIR=$(pwd)/output
 RELEASE_DIR=$(pwd)/release
-TARBALL_NAME="snis-$(date +%Y%m%d).tar.gz"
+TARBALL_NAME="snis-${VERSION}.tar.gz"
 
 mkdir -p "$RELEASE_DIR"
 

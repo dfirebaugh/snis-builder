@@ -1,5 +1,5 @@
 Package: snis
-Version: 1.0.0
+Version: __VERSION__
 Section: games
 Priority: optional
 Architecture: amd64

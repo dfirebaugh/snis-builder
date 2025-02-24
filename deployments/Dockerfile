@@ -28,6 +28,7 @@ RUN update-ca-certificates
 ARG USERNAME=snis
 ARG UID=1000
 ARG GID=1000
+ARG VERSION=1.0.0-latest
 
 RUN groupadd -g $GID $USERNAME && \
     useradd -m -u $UID -g $GID -s /bin/bash $USERNAME
@@ -41,5 +42,5 @@ RUN chown -R $UID:$GID /usr/src/space-nerds-in-space
 USER $USERNAME
 RUN make -j$(nproc) DOWNLOAD_OPUS=yes 2>&1 | tee /tmp/build.log
 
-CMD ["/bin/bash", "-c", "cp -r bin/* /output/bin && cp -r share/* /output/share"]
+CMD ["/bin/bash", "-c", "cp -r bin/* /output/$VERSION/bin && cp -r share/* /output/$VERSION/share"]
 
