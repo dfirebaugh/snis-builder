@@ -15,6 +15,8 @@ it does the following:
 * builds deb file and copies to release dir
 
 > to run this you need [docker installed](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
+> `jq` is also a dependency `apt install jq`
+
 ```bash
 make # build the release
 #   output dir contains binaries and assets
