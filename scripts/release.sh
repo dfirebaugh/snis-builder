@@ -8,7 +8,7 @@ VERSION=1.0.0-latest
 source ./scripts/get_version.sh
 
 OUTPUT_DIR=$(pwd)/output
-RELEASE_DIR=$(pwd)/release
+RELEASE_DIR=${1:-$(pwd)/release}
 TARBALL_NAME="snis-${VERSION}.tar.gz"
 
 mkdir -p "$RELEASE_DIR"
