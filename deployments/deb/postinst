@@ -17,3 +17,5 @@ sudo -u "$INSTALL_USER" ./bin/update_assets_from_launcher.sh
 ln -sf /usr/libexec/snis/bin/snis_client /usr/bin/snis
 ln -sf /usr/libexec/snis/bin/snis_client /usr/bin/snis_client
 
+update-desktop-database /usr/local/share/applications
+

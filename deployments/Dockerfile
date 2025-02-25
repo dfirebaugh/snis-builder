@@ -31,7 +31,7 @@ ARG GID=1000
 ARG VERSION=1.0.0-latest
 
 RUN groupadd -g $GID $USERNAME && \
-    useradd -m -u $UID -g $GID -s /bin/bash $USERNAME
+useradd -m -u $UID -g $GID -s /bin/bash $USERNAME
 
 WORKDIR /usr/src
 RUN git clone https://github.com/smcameron/space-nerds-in-space.git
@@ -41,6 +41,7 @@ RUN chown -R $UID:$GID /usr/src/space-nerds-in-space
 
 USER $USERNAME
 RUN make -j$(nproc) DOWNLOAD_OPUS=yes 2>&1 | tee /tmp/build.log
+RUN make PREFIX=/usr/src/space-nerds-in-space/share ; make PREFIX=/usr/src/space-nerds-in-space/share install
 
-CMD ["/bin/bash", "-c", "cp -r bin/* /output/$VERSION/bin && cp -r share/* /output/$VERSION/share"]
+CMD ["/bin/bash", "-c", "mkdir -p /output/$VERSION/usr/local/share/applications && cp -r bin/* /output/$VERSION/bin && cp -r share/* /output/$VERSION/share && cp /usr/src/space-nerds-in-space/share/applications/io.github.smcameron.space-nerds-in-space.desktop /output/$VERSION/usr/local/share/applications/ && cp /usr/src/space-nerds-in-space/share/applications/io.github.smcameron.space-nerds-in-space.svg /output/$VERSION/usr/local/share/applications/"]
 

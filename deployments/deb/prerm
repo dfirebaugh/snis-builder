@@ -2,4 +2,12 @@
 set -e
 
 rm -f /usr/bin/snis
+rm -f /usr/bin/snis_client
+
+rm -rf /usr/libexec/snis
+
+rm -f /usr/local/share/applications/io.github.smcameron.space-nerds-in-space.desktop
+rm -f /usr/local/share/applications/io.github.smcameron.space-nerds-in-space.svg
+
+update-desktop-database /usr/local/share/applications
 
