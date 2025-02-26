@@ -25,4 +25,5 @@ echo "$LATEST_COMMIT" > "$VERSION_FILE"
 echo "New commit detected. Running make..."
 make release RELEASE_DIR="$RELEASE_DIR"
 make deb RELEASE_DIR="$RELEASE_DIR"
+source ./scripts/update_repo.sh
 
