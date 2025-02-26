@@ -17,10 +17,10 @@ fi
 FILE_PATH="/var/lib/aptly/uploads/$LATEST_FILE"
 
 echo "Adding latest file to aptly repo: $LATEST_FILE"
-docker exec -it "$CONTAINER_NAME" aptly repo add snis "$FILE_PATH"
+docker exec "$CONTAINER_NAME" aptly repo add snis "$FILE_PATH"
 
 echo "Publishing update..."
-docker exec -it "$CONTAINER_NAME" aptly publish update bookworm
+docker exec "$CONTAINER_NAME" aptly publish update bookworm
 
 echo "Aptly repository updated successfully!"
 

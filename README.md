@@ -72,5 +72,5 @@ launch the `snis_client`
 
 ## Versions
 
-The version looks at the [https://github.com/smcameron/space-nerds-in-space](https://github.com/smcameron/space-nerds-in-space) repo at the latest tag and latest commit which translates to something like `1.0.0-abc123`.
+The version looks at the [https://github.com/smcameron/space-nerds-in-space](https://github.com/smcameron/space-nerds-in-space) repo at the latest tag, commits since the latest tag and latest commit hash which translates to something like `1.0.0.19-abc123`.
 
