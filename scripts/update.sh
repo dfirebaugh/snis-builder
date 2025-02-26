@@ -16,8 +16,8 @@ if [[ -z "$LATEST_COMMIT" ]]; then
 fi
 
 if [[ -f "$VERSION_FILE" && "$(cat "$VERSION_FILE")" == "$LATEST_COMMIT" ]]; then
-    echo "Commit hash unchanged. Nothing to do."
-    exit 0
+     echo "$(date '+%Y-%m-%d %H:%M:%S') - Commit hash unchanged. Nothing to do."
+     exit 0
 fi
 
 echo "$LATEST_COMMIT" > "$VERSION_FILE"
